@@ -18,17 +18,19 @@
       <div class="container">
         <nav>
           <img src="images/logo.png" class="logo" />
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark fas" onclick="closemenu()"></i>
           </ul>
+          <i class="fa-solid fa-bars fas" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
           <p>Web Designer</p>
-          <h1>Hi, I'm <span>Shreyas</span></h1>
+          <h1>Hi, I'm <span>Shreyas <br> Kowndinya</span></h1>
         </div>
       </div>
     </div>
@@ -126,14 +128,70 @@
         <div class="work-list">
           <div class="work">
             <img src="images/work-1.png" />
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p>
+                The App connects you to the talanted people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
           </div>
           <div class="work">
             <img src="images/work-2.png" />
+            <div class="layer">
+              <h3>Music App</h3>
+              <p>
+                The App connects you to the talanted people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
           </div>
           <div class="work">
             <img src="images/work-3.png" />
+            <div class="layer">
+              <h3>Online Shopping App</h3>
+              <p>
+                The App connects you to the talanted people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
           </div>
         </div>
+        <a href="#" class="btn">See more</a>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------------------Contact---------------------------------------------------------- -->
+
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h2 class="sub-title">Contact <span id="hover">Me</span></h2>
+            <p><i class="fa-solid fa-paper-plane"></i> skowndinya518@gmail.com</p>
+            <p><i class="fa-solid fa-square-phone"></i> 9901787660</p>
+            <div class="social-icons">
+              <a href=""><i class="fa-brands fa-facebook"></i></a> <!-- add url -->
+              <a href=""><i class="fa-brands fa-square-twitter"></i></a> <!-- add url -->
+              <a href=""><i class="fa-brands fa-instagram"></i></a> <!-- add url -->
+              <a href=""><i class="fa-brands fa-linkedin"></i></a> <!-- add url -->
+            </div>
+            <a href="" class="btn btn2">Download CV</a> <!-- add url and download function-->
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="Email" placeholder="Your Email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </body>
