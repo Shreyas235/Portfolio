@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfoilo Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/de7b290033.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- --------------------------------------------------------Home---------------------------------------------------------- -->
+
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" class="logo" />
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-text">
+          <p>Web Designer</p>
+          <h1>Hi, I'm <span>Shreyas</span></h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------------------About---------------------------------------------------------- -->
+
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/user.png" alt="" />
+          </div>
+          <div class="about-col-2">
+            <h2 class="sub-title abtme">About <span id="hover">Me</span></h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Laudantium consequatur iure quis perspiciatis nihil eius ullam
+              natus voluptates sit voluptatibus, excepturi ad earum quisquam
+              repellendus commodi obcaecati corporis laboriosam at deserunt
+              perferendis assumenda? Eos vero quasi autem explicabo fuga! Quidem
+              quis aperiam architecto optio nobis dignissimos molestiae
+              exercitationem libero officiis!
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>UI/UX</span><br />Designing Web/App Interfaces</li>
+                <li><span>Web Development</span><br />Web app Development</li>
+                <li>
+                  <span>App Development</span><br />buliding Androids/iOS apps
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2018</span><br />SSLC</li>
+                <li><span>2020</span><br />PUC</li>
+                <li><span>2023</span><br />BSc in Computer Science</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------------------My Services---------------------------------------------------------- -->
+    <div id="services">
+      <div class="container">
+        <h2 class="sub-title">My <span id="hover">Services</span></h2>
+        <div class="services-list">
+          <div class="card">
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+              deserunt optio omnis sit est doloremque. Ea error asperiores
+              doloribus earum.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-crop-simple"></i>
+            <h2>UI/UX Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+              deserunt optio omnis sit est doloremque. Ea error asperiores
+              doloribus earum.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="card">
+            <i class="fa-brands fa-app-store"></i>
+            <h2>App Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+              deserunt optio omnis sit est doloremque. Ea error asperiores
+              doloribus earum.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------------------Portfolio---------------------------------------------------------- -->
+
+    <div id="portfolio">
+      <div class="container">
+        <h2 class="sub-title">My <span id="hover">Work</span></h2>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png" />
+          </div>
+          <div class="work">
+            <img src="images/work-2.png" />
+          </div>
+          <div class="work">
+            <img src="images/work-3.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
