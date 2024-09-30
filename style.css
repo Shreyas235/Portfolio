@@ -5,6 +5,10 @@
   font-family: "poppins", sans-serif;
 }
 
+#active {
+  color: #00ffee;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -12,6 +16,7 @@ html {
 body {
   background: #080808;
   color: #fff;
+  position: relative;
 }
 
 /* --------------------------------------------------------Home----------------------------------------------------------  */
@@ -62,6 +67,7 @@ nav ul li a::after {
   bottom: -6px;
   transition: 0.5s;
   border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 255, 238, 1)
 }
 
 nav ul li a:hover::after {
@@ -81,6 +87,43 @@ nav ul li a:hover::after {
 .header-text h1 span {
   color: #00ffee;
 }
+
+.change-text {
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+
+.change-text h3 {
+  display: inline-flex;
+  margin: 0;
+  vertical-align: top;
+}
+
+.change-text h3 .word {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  color: #00ffee;
+  font-size: 40px;
+  margin: -5px 0 0 10px;
+}
+
+.change-text h3 .word .letter {
+  transform-origin: center center 25px;
+}
+
+.change-text h3 .word .letter.out {
+  transform: rotateX(90deg);
+  transition: 0.32s cubic-bezier(0.6,0,0.7,0.2);
+}
+
+.change-text h3 .word .letter.in {
+  transition: 0.38s ease;
+}
+
+.change-text h3 .word .letter.behind {
+  transform: rotateX(-90deg);
+} 
 
 /* --------------------------------------------------------About Me----------------------------------------------------------  */
 
@@ -181,45 +224,23 @@ nav ul li a:hover::after {
   font-size: 13px;
   font-weight: 300;
   border-radius: 10px;
-  transform-style: preserve-3d;
   transition: all 0.5s ease-in-out;
+}
+
+.services-list div:hover {
+  background: #00ffee;
+  scale: 1.1;
 }
 
 .services-list div i {
   font-size: 50px;
   margin-bottom: 30px;
-  transition: all 0.5s ease-in-out;
-  transform: translate3d(0px, 0px, 20px);
-}
-
-.services-list div i:hover {
-  transform: translate3d(0px, 0px, 50px);
 }
 
 .services-list div h2 {
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 15px;
-  transition: all 0.5s ease-in-out;
-  transform: translate3d(0px, 0px, 20px);
-}
-
-#hover {
-    color: #00ffee;
-    transition: 0.5s;
-}
-
-.services-list div h2:hover {
-  transform: translate3d(0px, 0px, 50px);
-}
-
-.services-list div p {
-  transition: all 0.5s ease-in-out;
-  transform: translate3d(0px, 0px, 20px);
-}
-
-.services-list div p:hover {
-  transform: translate3d(0px, 0px, 50px);
 }
 
 .services-list div a {
@@ -228,19 +249,6 @@ nav ul li a:hover::after {
   font-size: 12px;
   margin-top: 20px;
   display: inline-block;
-  transition: all 0.5s ease-in-out;
-  transform: translate3d(0px, 0px, 20px);
-}
-
-.services-list div a:hover {
-  transform: translate3d(0px, 0px, 50px);
-}
-
-.services-list div:hover {
-  background: #00ffee;
-  /* transform: translate(10px, -10px); */
-  background-position: 80% 20%;
-  transform: rotate3d(0.5, 1, 0, 30deg);
 }
 
 .card {
@@ -354,11 +362,14 @@ transform: scale(1.1);
 
 .contact-left p {
   margin-top: 30px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
 }
 
 .contact-left p i {
   color: #00ffee;
-  margin-right: 15px;
+  margin-right: 20px;
   font-size: 25px;
 }
 
@@ -379,6 +390,75 @@ transform: scale(1.1);
   color: #00ffee;
   transform: translateY(-5px);
   /* transform: scale(1.5); */
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.downbtn {
+  border: 0.5px solid #00ffee;
+  padding: 17px 50px;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+.downbtn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.downbtn::before {
+  content: "";
+  background: #00ffee;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+.downbtn:hover {
+  color: #fff;
+}
+
+.downbtn:hover::before {
+  opacity: 1;
+}
+
+.downbtn:active:after {
+  background: transparent;
+}
+
+.downbtn:active {
+  color: #000;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+  
 }
 
 .btn.btn2 {
@@ -403,24 +483,71 @@ form input, form textarea {
   border-radius: 6px;
 }
 
-form .btn2{
-  padding: 12px 50px;
-  font-size: 20px;
-  margin-top: 20px;
-  cursor: pointer;
+.subbtn {
+  margin-top: 10px;
+  padding: 14px 40px;
 }
 
 #msg {
-  color: #61b752;
-  margin-top: -40px;
+  color: green;
+  margin-top: -20px;
   display: block;
 }
-
-/*------------------------------------------------------------CSS for Smaller Screen--------------------------------------------------------------*/
 
 nav .fas {
   display: none;
 }
+
+#toastBox {
+  position: absolute;
+  bottom: 0px;
+  right: 60px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+  color: #000;
+  font-size: 14px;
+}
+
+.toast {
+  width: 200px;
+  height: 40px;
+  background: #fff;
+  font-weight: 500;
+  box-shadow: 0 0 20px rgba(0, 255, 238, 1);
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 5px;
+}
+
+.toast i {
+  margin: 0 10px;
+  font-size: 18px;
+  color: green;
+}
+
+.toast::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: green;
+  animation: anim 5s linear forwards;
+  border-radius: 5px;
+}
+
+@keyframes anim {
+  100% {
+    width: 0;
+  } 
+}
+
+/*------------------------------------------------------------CSS for Smaller Screen--------------------------------------------------------------*/
 
 @media only screen and (max-width: 600px) {
   #header {
@@ -428,7 +555,7 @@ nav .fas {
   }
 
   .header-text {
-    margin-top: 100%;
+    margin-top: 70%;
     font-size: 16px;
   }
 
