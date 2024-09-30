@@ -554,8 +554,6 @@ nav .fas {
     background-image: url(images/phone-background.png);
   }
 
-  
-
   .header-text {
     margin-top: 80%;
     font-size: 16px;
@@ -627,6 +625,10 @@ nav .fas {
   .tab-links {
     font-size: 16px;
     margin-right: 20px;
+  }
+
+  .services-list div:hover {
+    scale: 1.05;
   }
 
   .contact-left, .contact-right {
