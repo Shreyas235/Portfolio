@@ -549,13 +549,13 @@ nav .fas {
 
 /*------------------------------------------------------------CSS for Smaller Screen--------------------------------------------------------------*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   #header {
     background-image: url(images/phone-background.png);
   }
 
   .header-text {
-    margin-top: 70%;
+    margin-top: 60%;
     font-size: 16px;
   }
 
@@ -590,6 +590,20 @@ nav .fas {
     top: 25px;
     left: 25px;
     cursor: pointer;
+  }
+
+  .change-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .change-text h3 {
+    font-size: 20px;
+  }
+
+  .change-text h3 .word {
+    font-size: 25px;
   }
 
   .sub-title {
