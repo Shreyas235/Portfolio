@@ -22,6 +22,41 @@ function closemenu() {
   sidemenu.style.right = "-150px";
 }
 
+/* --------------------------------------------------------Change-theme----------------------------------------------------------  */
+
+let darkmode = localStorage.getItem("darkmode");
+const themeSwitch = document.getElementById("theme-switch");
+
+const enabledarkmode = () => {
+  document.body.classList.add("darkmode");
+  localStorage.setItem("darkmode", "active");
+};
+
+const disabledarkmode = () => {
+  document.body.classList.remove("darkmode");
+  localStorage.setItem("darkmode", null);
+};
+
+if (darkmode === "active") enabledarkmode();
+
+themeSwitch.addEventListener("click", () => {
+  darkmode = localStorage.getItem("darkmode");
+  darkmode !== "active" ? enabledarkmode() : disabledarkmode();
+});
+
+/* --------------------------------------------------------Scroll to top----------------------------------------------------------  */
+
+const scrollTop = document.getElementById("scroll-top");
+scrollTop.addEventListener("click", function () {
+  window.scrollTo(0, 0);
+
+  // window.scrollTo({
+  //   top: 0,
+  //   left: 0,
+  //   behavior: "smooth"
+  // })
+});
+
 /* --------------------------------------------------------Change-text----------------------------------------------------------  */
 
 let words = document.querySelectorAll(".word");
@@ -86,16 +121,16 @@ form.addEventListener("submit", (e) => {
 
 /* --------------------------------------------------------For toast Notification----------------------------------------------------------  */
 
-let toastBox = document.getElementById("toastBox");
+// let toastBox = document.getElementById("toastBox");
 
-function showToast() {
-  let toast = document.createElement("div");
-  toast.classList.add("toast");
-  toast.innerHTML =
-    '<i class="fa-solid fa-circle-check"></i>Successfully submitted';
-  toastBox.appendChild(toast);
+// function showToast() {
+//   let toast = document.createElement("div");
+//   toast.classList.add("toast");
+//   toast.innerHTML =
+//     '<i class="fa-solid fa-circle-check"></i>Successfully submitted';
+//   toastBox.appendChild(toast);
 
-  setTimeout(() => {
-    toast.remove();
-  }, 5000);
-}
+//   setTimeout(() => {
+//     toast.remove();
+//   }, 5000);
+// }

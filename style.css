@@ -5,8 +5,36 @@
   font-family: "poppins", sans-serif;
 }
 
+.darkmode {
+  --background: #262626;
+  --white-color: #fff;
+  --nav-color: #fff;
+  --black-color: #111111;
+  --blue-color: #00ffee;
+  --onHover: #00ffee;
+  --paragraph: #ffffffc9;
+  --green-color: #008000;
+  --overlay: rgba(0 ,0 ,0 ,0.6);
+  --primary-color: #2d2f36;
+  --secondary-color: #0a0a0c;
+}
+
+:root {
+  --background: #fbfbfb;
+  --white-color: #1f1f1f;
+  --nav-color: #818181;
+  --black-color: #ffffff;
+  --blue-color: #00ffee;
+  --onHover: #202020;
+  --paragraph: #1a1a1ac9;
+  --green-color: #008000;
+  --overlay: rgba(255, 255, 255, 0.2);
+  --primary-color: #b4b4b4;
+  --secondary-color: #141518;
+}
+
 #active {
-  color: #00ffee;
+  color: var(--blue-color);
 }
 
 html {
@@ -14,9 +42,51 @@ html {
 }
 
 body {
-  background: #080808;
-  color: #fff;
+  background: var(--black-color);
+  color: var(--white-color);
   position: relative;
+}
+
+#theme-switch, #scroll-top {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#theme-switch{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+#scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#theme-switch svg {
+  fill: var(--secondary-color);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
 }
 
 /* --------------------------------------------------------Home----------------------------------------------------------  */
@@ -52,7 +122,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: var(--nav-color);
   font-size: 18px;
   position: relative;
 }
@@ -61,13 +131,13 @@ nav ul li a::after {
   content: "";
   width: 0;
   height: 3px;
-  background: #00ffee;
+  background: var(--blue-color);
   position: absolute;
   left: 0;
   bottom: -6px;
   transition: 0.5s;
   border-radius: 20px;
-  box-shadow: 0px 5px 10px rgba(0, 255, 238, 1);
+  box-shadow: 0px 5px 10px var(--blue-color);
 }
 
 nav ul li a:hover::after {
@@ -85,7 +155,7 @@ nav ul li a:hover::after {
 }
 
 .header-text h1 span {
-  color: #00ffee;
+  color: var(--blue-color);
 }
 
 .change-text {
@@ -103,7 +173,7 @@ nav ul li a:hover::after {
   position: absolute;
   display: flex;
   opacity: 0;
-  color: #00ffee;
+  color: var(--blue-color);
   font-size: 40px;
   margin: -5px 0 0 10px;
 }
@@ -129,7 +199,7 @@ nav ul li a:hover::after {
 
 #about {
   padding: 100px 0;
-  color: #ababab;
+  color: var(--paragraph);
 }
 
 .row {
@@ -154,7 +224,7 @@ nav ul li a:hover::after {
 .sub-title {
   font-size: 60px;
   font-weight: 600;
-  color: #fff;
+  color: var(--white-color);
   margin-bottom: 40px;
 }
 
@@ -175,7 +245,7 @@ nav ul li a:hover::after {
   content: "";
   width: 0;
   height: 3px;
-  background: #00ffee;
+  background: var(--blue-color);
   position: absolute;
   left: 0;
   bottom: -8px;
@@ -192,8 +262,9 @@ nav ul li a:hover::after {
 }
 
 .tab-contents ul li span {
-  color: #00a095;
-  font-size: 14px;
+  color: var(--blue-color);
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .tab-contents {
@@ -219,7 +290,7 @@ nav ul li a:hover::after {
 }
 
 .services-list div {
-  background: #262626;
+  background: var(--background);
   padding: 40px;
   font-size: 13px;
   font-weight: 300;
@@ -228,10 +299,10 @@ nav ul li a:hover::after {
 }
 
 .services-list div:hover {
-  background: #00ffee;
+  background: var(--onHover);
   scale: 1.05;
-  color: #000;
-  box-shadow: 20px 0px 60px rgba(0, 255, 238, 1);
+  color: var(--black-color);
+  box-shadow: 0px 0px 60px var(--onHover);
 }
 
 .services-list div i {
@@ -247,18 +318,18 @@ nav ul li a:hover::after {
 
 .services-list div a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white-color);
   font-size: 12px;
   margin-top: 20px;
   display: inline-block;
 }
 
 .card {
-  box-shadow: 10px 15px 10px rgba(0, 255, 238, 1);
+  box-shadow: 10px 15px 10px var(--onHover);
 }
 
 .card:hover {
-  box-shadow: 0px 20px 60px rgba(0, 255, 238, 1);
+  box-shadow: 0px 0px 60px var(--onHover);
 }
 
 /*------------------------------------------------------------My Work--------------------------------------------------------------*/
@@ -290,7 +361,7 @@ nav ul li a:hover::after {
 .layer {
   width: 100%;
   height: 0%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), #00ffee);
+  background: linear-gradient(var(--overlay), var(--blue-color));
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -307,22 +378,27 @@ nav ul li a:hover::after {
 }
 
 .layer h3 {
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 20px;
   font-size: 20px;
+  color: var(--white-color);
+}
+
+.layer p {
+  color: var(--white-color);
 }
 
 .layer a {
   margin-top: 20px;
-  color: #00ffee;
+  color: var(--blue-color);
   text-decoration: none;
   font-size: 18px;
-  line-height: 60px;
-  background: #fff;
-  width: 60px;
-  height: 60px;
+  line-height: 50px;
+  background: var(--white-color);
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  text-align: center;
+  text-align: center
 }
 
 .work:hover img {
@@ -337,17 +413,17 @@ nav ul li a:hover::after {
   display: block;
   margin: 50px auto;
   width: fit-content;
-  border: 1px solid #00ffee;
+  border: 1px solid var(--blue-color);
   padding: 14px 50px;
   border-radius: 6px;
   text-decoration: none;
-  color: #fff;
+  color: var(--white-color);
   transition: background 0.5s;
 }
 
 .btn:hover {
-  background: #00ffee;
-  color: #000;
+  background: var(--blue-color);
+  color: var(--black-color);
 }
 
 /*------------------------------------------------------------Contact Me--------------------------------------------------------------*/
@@ -358,7 +434,7 @@ nav ul li a:hover::after {
 
 .contact-right {
   flex-basis: 60%;
-  border: 1px solid #00ffee;
+  border: 1px solid var(--blue-color);
   padding: 50px;
 }
 
@@ -370,7 +446,7 @@ nav ul li a:hover::after {
 }
 
 .contact-left p i {
-  color: #00ffee;
+  color: var(--blue-color);
   margin-right: 20px;
   font-size: 25px;
 }
@@ -383,25 +459,25 @@ nav ul li a:hover::after {
   text-decoration: none;
   font-size: 30px;
   margin-right: 15px;
-  color: #ababab;
+  color: var(--white-color);
   display: inline-block;
   transition: transform 0.5s;
 }
 
 .social-icons a:hover {
-  color: #00ffee;
+  color: var(--blue-color);
   transform: translateY(-5px);
   /* transform: scale(1.5); */
 }
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white-color);
   font-size: 14px;
 }
 
 .downbtn {
-  border: 0.5px solid #00ffee;
+  border: 0.5px solid var(--blue-color);
   padding: 17px 50px;
   text-decoration: none;
   outline: none;
@@ -417,7 +493,7 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: var(--black-color);
   left: 0;
   top: 0;
   border-radius: 10px;
@@ -425,7 +501,7 @@ a {
 
 .downbtn::before {
   content: "";
-  background: #00ffee;
+  background: var(--blue-color);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -441,7 +517,7 @@ a {
 }
 
 .downbtn:hover {
-  color: #fff;
+  color: var(--white-color);
 }
 
 .downbtn:hover::before {
@@ -453,7 +529,7 @@ a {
 }
 
 .downbtn:active {
-  color: #000;
+  color: var(--black-color);
 }
 
 @keyframes glowing {
@@ -470,8 +546,8 @@ a {
 
 .btn.btn2 {
   display: inline-block;
-  background: #00ffee;
-  color: #fff;
+  background: var(--blue-color);
+  color: var(--white-color);
 }
 
 .contact-right form {
@@ -481,12 +557,12 @@ a {
 form input,
 form textarea {
   width: 100%;
-  border: 0.5px solid #00ffee;
+  border: 0.5px solid var(--blue-color);
   outline: none;
-  background: #262626;
+  background: var(--black-color);
   padding: 15px;
   margin: 15px 0;
-  color: #fff;
+  color: var(--white-color);
   font-size: 18px;
   border-radius: 6px;
 }
@@ -497,7 +573,7 @@ form textarea {
 }
 
 #msg {
-  color: green;
+  color: var(--green-color);
   margin-top: -20px;
   display: block;
 }
@@ -515,16 +591,16 @@ nav .fas {
   flex-direction: column;
   overflow: hidden;
   padding: 20px;
-  color: #000;
+  color: var(--black-color);
   font-size: 14px;
 }
 
 .toast {
   width: 200px;
   height: 40px;
-  background: #fff;
+  background: var(--white-color);
   font-weight: 500;
-  box-shadow: 0 0 20px rgba(0, 255, 238, 1);
+  box-shadow: 0 0 20px var(--blue-color);
   display: flex;
   align-items: center;
   position: relative;
@@ -534,7 +610,7 @@ nav .fas {
 .toast i {
   margin: 0 10px;
   font-size: 18px;
-  color: green;
+  color: var(--green-color);
 }
 
 .toast::after {
@@ -544,7 +620,7 @@ nav .fas {
   bottom: 0;
   width: 100%;
   height: 4px;
-  background: green;
+  background: var(--green-color);
   animation: anim 5s linear forwards;
   border-radius: 5px;
 }
@@ -577,7 +653,7 @@ nav .fas {
   }
 
   nav ul {
-    background: #00ffee;
+    background: var(--blue-color);
     position: fixed;
     top: 0;
     right: -150px;
@@ -591,6 +667,10 @@ nav .fas {
   nav ul li {
     display: block;
     margin: 25px;
+  }
+
+  nav ul li a {
+    color: var(--white-color);
   }
 
   nav ul .fa-solid {
