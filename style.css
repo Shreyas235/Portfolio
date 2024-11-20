@@ -17,7 +17,7 @@
   --paragraph: #ffffffc9;
   --green-color: #008000;
   --overlay: rgba(0 ,0 ,0 ,0.6);
-  --primary-color: #2d2f36;
+  --primary-color: #4a4b4e;
   --secondary-color: #0a0a0c;
 }
 
@@ -77,6 +77,7 @@ body {
 
 #scroll-top:hover {
   color: var(--onHover);
+  box-shadow: 0px 0px 10px var(--blue-color);
 }
 
 #theme-switch svg {
@@ -85,6 +86,10 @@ body {
 
 #theme-switch svg:hover {
   fill: var(--onHover);
+}
+
+#theme-switch:hover {
+  box-shadow: 0px 0px 10px var(--blue-color);
 }
 
 #theme-switch svg:last-child {
