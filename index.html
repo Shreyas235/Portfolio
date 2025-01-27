@@ -195,11 +195,14 @@
             <form name="submit-to-google-sheet">
               <input type="text" name="Name" placeholder="Your Name" required>
               <input type="email" name="Email" placeholder="Your Email" required>
+              <!-- <input type="password" name="Password" placeholder="Your Password" required> -->
               <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
               <button type="submit" class="btn downbtn subbtn" onclick="showToast()">Submit</button>
             </form>
-            <span id="msg"></span> <!--For Google Sheets-->
-            <div id="toastBox"></div> 
+            <!--For Google Sheets-->
+            <span id="msg"></span> 
+            <!--Not for Google Sheets-->
+            <!-- <div id="toastBox"></div>  -->
           </div>
         </div>
       </div>

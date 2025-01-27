@@ -101,36 +101,35 @@ setInterval(changeText, 3000);
 
 /* --------------------------------------------------------For Google Sheets----------------------------------------------------------  */
 
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbyWiuIXlbwVL5JjztvU3dv8Q8QBrnY7JwVTXXuJrrW083JCsuggxkECxRrDvCxOZAH3ZA/exec";
-const form = document.forms["submit-to-google-sheet"];
-const msg = document.getElementById("msg");
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyqM4w8e_SVCEG7FUx2Lfs7BI2DlU1dCL0B_8h5jNNuFYNFgqbX4A4zcHm7g6e5XVMy/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById('msg')
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) => {
-      msg.innerHTML = "";
-      setTimeout(function () {
-        msg.innerHTML = "";
-      }, 5000);
-      form.reset();
-    })
-    .catch((error) => console.error("Error!", error.message));
-});
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Form submitted successfully"
+        setTimeout(function(){
+          msg.innerHTML = ""
+        }, 5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
 
 /* --------------------------------------------------------For toast Notification----------------------------------------------------------  */
 
-// let toastBox = document.getElementById("toastBox");
+let toastBox = document.getElementById("toastBox");
 
-// function showToast() {
-//   let toast = document.createElement("div");
-//   toast.classList.add("toast");
-//   toast.innerHTML =
-//     '<i class="fa-solid fa-circle-check"></i>Successfully submitted';
-//   toastBox.appendChild(toast);
+function showToast() {
+  let toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.innerHTML =
+    '<i class="fa-solid fa-circle-check"></i>Successfully submitted';
+  toastBox.appendChild(toast);
 
-//   setTimeout(() => {
-//     toast.remove();
-//   }, 5000);
-// }
+  setTimeout(() => {
+    toast.remove();
+  }, 5000);
+}
