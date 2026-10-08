@@ -5,7 +5,6 @@
   --color-accent: #7c6cff;
   --color-glow: #35d6ff;
 }
-:root { --bg:#f4f5fc; --fg:#14152b; --muted:#5b5e7a; --card:rgba(255,255,255,.7); --line:rgba(20,21,43,.12); }
 .dark { --bg:#0e0f22; --fg:#eef0ff; --muted:#9a9dc2; --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.14); }
 html { overflow-x:clip; scroll-behavior:smooth; scroll-padding-top:6rem; }
 body { overflow-x:clip; max-width:100vw; background:var(--bg); color:var(--fg); font-family:var(--font-sans); transition:background .3s,color .3s; }

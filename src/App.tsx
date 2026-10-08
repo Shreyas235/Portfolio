@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useState, type MouseEvent, type ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { Code, Palette, Globe, GraduationCap, PenTool, Smartphone, Search, Gauge, LayoutTemplate, Webhook, ArrowUp, Stethoscope, UtensilsCrossed, Building2, Leaf, HardHat, type LucideIcon } from 'lucide-react'
-import { siHtml5, siCss, siJavascript, siReact, siMui, siFigma, siWordpress, siTailwindcss, siTypescript, siRedux, siNextdotjs, siGit, siAxios, siReactrouter, type SimpleIcon } from 'simple-icons'
+import { siGithub, siHtml5, siCss, siJavascript, siReact, siMui, siFigma, siWordpress, siTailwindcss, siTypescript, siRedux, siNextdotjs, siGit, siAxios, siReactrouter, type SimpleIcon } from 'simple-icons'
 import photo from './profile.jpg'
 import music from './shots/music.jpg'
 import bk from './shots/bk.jpg'
@@ -135,10 +135,22 @@ export default function App() {
             <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl">Shreyas<br />Kowndinya R</h1>
             <p className="mt-4 h-9 text-2xl font-bold text-accent" aria-label="Frontend Developer, UI/UX Designer, WordPress Builder"><Typing /></p>
             <p className="mt-3 max-w-md text-lg">I design and build fast, good-looking websites and web apps that people enjoy using.</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#projects" className="rounded-full bg-accent px-6 py-3 font-bold text-white shadow-lg shadow-accent/40">See my work</a>
-              <a href="#contact" className="card card-glow rounded-full px-6 py-3 font-bold">Contact me</a>
-              <a href="/resume.pdf" download className="card card-glow rounded-full px-6 py-3 font-bold">Download resume</a>
+            <div className="mt-8 w-fit max-w-full">
+              <div className="flex flex-wrap gap-3">
+                <a href="#projects" className="rounded-full bg-accent px-6 py-3 font-bold text-white shadow-lg shadow-accent/40">See my work</a>
+                <a href="#contact" className="card card-glow rounded-full px-6 py-3 font-bold">Contact me</a>
+                <a href="/resume.pdf" download className="card card-glow rounded-full px-6 py-3 font-bold">Download resume</a>
+              </div>
+              <div className="mt-3 flex flex-wrap justify-center gap-3">
+                <a href="https://www.linkedin.com/in/shreyas-kowndinya-r-89811528a/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="card card-glow inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-bold">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+                  LinkedIn
+                </a>
+                <a href="https://github.com/Shreyas235" target="_blank" rel="noreferrer" aria-label="GitHub" className="card card-glow inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden><path d={siGithub.path} /></svg>
+                  GitHub
+                </a>
+              </div>
             </div>
           </motion.div>
           <div className="relative h-80 md:h-[30rem]">
