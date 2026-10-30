@@ -1,0 +1,42 @@
+/* Page-level defaults: html/body, text helpers, form controls, focus rings. */
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100vw;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  transition: background .3s, color .3s;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+input,
+textarea {
+  color: var(--fg);
+  font: inherit;
+}
+
+::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,22 @@
+/* Touch devices have no hover, so show the glow by default. */
+@media (hover: none) {
+  .hero-btn.card-glow {
+    border-color: rgba(124, 108, 255, 1);
+    box-shadow: 0 0 0 1px rgba(124, 108, 255, .3), 0 6px 20px rgba(124, 108, 255, .3);
+  }
+
+  .touch-glow.card-glow {
+    border-color: rgba(124, 108, 255, 1);
+    box-shadow: 0 0 0 1px rgba(124, 108, 255, .35), 0 12px 40px rgba(124, 108, 255, .35), 0 0 60px rgba(53, 214, 255, .18);
+  }
+
+  .touch-field {
+    border-color: rgba(124, 108, 255, 1);
+    box-shadow: 0 0 0 1px rgba(124, 108, 255, .3), 0 8px 24px rgba(124, 108, 255, .5);
+  }
+
+  .touch-glow-soft.card-glow-soft {
+    border-color: rgba(124, 108, 255, .6);
+    box-shadow: 0 0 0 1px rgba(124, 108, 255, .25), 0 10px 32px rgba(124, 108, 255, .3);
+  }
+}

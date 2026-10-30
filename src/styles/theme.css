@@ -1,0 +1,16 @@
+/* Design tokens: Tailwind theme, dark variant and the light/dark colour variables. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-accent: #7c6cff;
+  --color-glow: #35d6ff;
+}
+
+.dark {
+  --bg: #0e0f22;
+  --fg: #eef0ff;
+  --muted: #9a9dc2;
+  --card: rgba(255, 255, 255, .06);
+  --line: rgba(255, 255, 255, .14);
+}
