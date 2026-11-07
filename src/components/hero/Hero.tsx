@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { useCanShow3D } from '@/hooks/useCanShow3D'
+import { useHeroMotion } from '@/hooks/useHeroMotion'
 import { useLiquidReveal } from '@/hooks/useLiquidReveal'
 import { HeroActions } from './HeroActions'
 import { HeroReveal } from './HeroReveal'
@@ -11,6 +12,7 @@ const Hero3D = lazy(() => import('./Hero3D'))
 export function Hero() {
   const reveal = useLiquidReveal()
   const show3d = useCanShow3D()
+  const right = useHeroMotion<HTMLDivElement>()
   return (
     <section className="relative grid min-h-screen grid-cols-1 items-center gap-6 pt-28 md:grid-cols-2">
               <motion.div aria-hidden
@@ -24,7 +26,7 @@ export function Hero() {
                 <p className="mt-3 max-w-md text-lg">I design and build fast, good-looking websites and web apps that people enjoy using.</p>
                 <HeroActions />
               </motion.div>
-              <div className="relative h-80 md:h-[30rem]">
+              <div ref={right} className="relative h-80 md:h-[30rem]">
                 {show3d && <Suspense fallback={null}><Hero3D /></Suspense>}
               </div>
 

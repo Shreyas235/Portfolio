@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform, type Variants } from 'framer-motion'
 import photo from '@/assets/images/profile.jpg'
+import { ParallaxImg } from '@/components/ui/ParallaxImg'
 import { Heading } from '@/components/ui/Heading'
 import { Reveal } from '@/components/ui/Reveal'
 import { aboutStats, aboutText } from '@/data/about'
@@ -39,7 +40,7 @@ export function About() {
         <motion.div style={{ rotateX: rx, rotateY: ry, transformStyle: 'preserve-3d' }} className="h-full w-full"
           animate={{ y: [0, -8, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}>
           <div className="gloss relative h-full w-full overflow-hidden rounded-[2.5rem] p-1.5">
-            <img src={photo} alt="Shreyas Kowndinya R" className="h-full w-full rounded-[2.1rem] object-cover" />
+            <div className="h-full w-full overflow-hidden rounded-[2.1rem]"><ParallaxImg src={photo} alt="Shreyas Kowndinya R" className="h-full w-full object-cover" /></div>
           </div>
         </motion.div>
         {/* floating badges */}

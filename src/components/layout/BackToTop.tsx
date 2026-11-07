@@ -1,9 +1,10 @@
 import { ArrowUp } from 'lucide-react'
 import { motion, type MotionValue } from 'framer-motion'
+import { getLenis } from '@/utils/smooth'
 
 export function BackToTop({ visible, progress }: { visible: boolean; progress: MotionValue<number> }) {
   return (
-    <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Back to top" tabIndex={visible ? 0 : -1}
+    <button onClick={() => { const l = getLenis(); if (l) l.scrollTo(0); else window.scrollTo({ top: 0, behavior: 'smooth' }) }} aria-label="Back to top" tabIndex={visible ? 0 : -1}
             className={`gloss fixed right-5 z-50 grid h-12 w-12 place-items-center rounded-full transition-all duration-300 ${visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'}`}
             style={{ bottom: 'calc(1.25rem + env(safe-area-inset-bottom, 0px))' }}>
             <svg aria-hidden viewBox="0 0 48 48" className="pointer-events-none absolute inset-0 h-full w-full -rotate-90" fill="none" strokeWidth="3" strokeLinecap="round">
